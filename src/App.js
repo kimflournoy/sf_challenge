@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Todos from './components/Todos/Todos';
 import StatusMessage from './components/StatusMessage/StatusMessage';
+import EmptyMessage from './components/EmptyMessage/EmptyMessage';
 
 import './App.scss';
 
@@ -111,12 +112,13 @@ class App extends Component {
 
         <StatusMessage messageType={this.state.messageType} changedItemKey={this.state.changedItemKey} changedItemTitle={this.state.changedItemTitle} />
 
-        {
+      <EmptyMessage emptyMessage={this.state.emptyMessage} />
+        {/* {
           // TODO - pull this into a component
           this.state.emptyMessage ? (
             " Empty message here "
           ) : ""
-        }
+        } */}
 
       </div>
     );
