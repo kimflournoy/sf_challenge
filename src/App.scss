@@ -1,4 +1,7 @@
-$color1: #ff0000;
+@import "./mixins/colors.scss";
+@import "./mixins/mixins.scss";
+
+
 
 * {
   box-sizing: border-box;
