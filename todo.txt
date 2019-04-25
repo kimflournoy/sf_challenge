@@ -1,0 +1,4 @@
+Current problem:
+
+Deleting items isn't getting correct index number. I have to map all the keys and then find the correct item.
+

@@ -27,8 +27,9 @@ export class TodoItem extends Component {
 
     return (
       <li className={"todoitem__list-item" + this.getStyle(completed) }>
-        <input type="checkbox" className="todoitem__checkbox" onChange={this.props.toggleComplete.bind(this, id)} />
-        { title }
+        <input type="checkbox" className="todoitem__checkbox" id={"todoitem__checkbox_checkbox-" + id} onChange={this.props.toggleComplete.bind(this, id)} />
+        <label htmlFor={"todoitem__checkbox_checkbox-" + id} className="todoitem__checkbox-label">{ title }</label>
+        <button className="todoitem__delete-button" onClick={this.props.deleteTodo.bind(this, id)}>X</button>
       </li>
     )
   }
