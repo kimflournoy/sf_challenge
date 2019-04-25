@@ -8,16 +8,15 @@ import './App.scss';
 
 class App extends Component {
 
-
   state = {
     todos: [
       {
-       id: 0,
+        id: 0,
         title: 'Take out the trash',
         completed: false
       },
       {
-       id: 1,
+        id: 1,
         title: 'Clean the dishes',
         completed: false
       },
@@ -27,11 +26,11 @@ class App extends Component {
         completed: false
       },
     ],
-    message: "hello",
+
     messageType: "",
-    changedItem: "",
+    changedItemKey: "",
     changedItemTitle: "",
-    //changedItemTitle: this.todos[this.changedItem],
+    emptyMessage: false
   }
 
 
@@ -39,98 +38,86 @@ class App extends Component {
   toggleComplete = (id) => {
     this.setState(
       {
-      todos: this.state.todos.map( todo => {
-        if(todo.id === id) {
-          todo.completed = !todo.completed;
+        todos: this.state.todos.map(todo => {
+          if (todo.id === id) {
+            todo.completed = !todo.completed;
 
-          this.setState({
-            changedItem: todo.id,
-            changedItemTitle: todo.title
-          })
+            // Update message after toggling checkbox
+            if (todo.completed === true) {
+              this.updateMessage(todo.id, todo.title, "checked");
+            }
+            else {
+              this.updateMessage(todo.id, todo.title, "unchecked");
+            }
 
-          if(todo.completed === true) {
-            this.setState({
-              messageType: "checked"
-            })
           }
-          else {
-            this.setState({
-              messageType: "unchecked"
-            })
-          }
-
+          return todo;
         }
-        return todo;
-      }
-    ) } );
+        )
+      });
   }
 
+
+  // Check if there are no more todos
+  checkEmpty = () => {
+    if (this.state.todos.length === 0) {
+      this.setState(
+        {
+          emptyMessage: true,
+        }
+      );
+    }
+  }
 
 
   // Delete todo item
   deleteTodo = (id) => {
-    var localTodoTitle = this.state.todos[id.toString()].title;
+    var result = this.state.todos.find(e => e.id === id);
+
+    // update the message first before we remove the item from the array
+    this.updateMessage(result.id, result.title, "deleted");
+
+    // using a callback since setState is asynch
     this.setState(
       {
-      todos: [...this.state.todos.filter(todo => todo.id !== id)],
+        todos: [...this.state.todos.filter(todo => todo.id !== id)],
+      }, () => this.checkEmpty()
+    );
 
-      }, () => {
-        console.log("length: " + this.state.todos.length);
-        this.updateMessage(localTodoTitle, "deleted");
-      }
-      );
-
-      
-      //this.updateMessage(id, "deleted");
-
-
-      
-   
   }
 
 
-  updateMessage = (messageTitle, messageType) => {
+  // update the message as needed. Probably can make this more streamlined.
+  updateMessage = (messageId, messageTitle, messageType) => {
 
-    console.log("length: " + this.state.todos.length);
-
-    
-    if(this.state.todos.length > 0) {
-      this.setState(
-          {
-          
-
-              messageType: messageType,
-              changedItemTitle: messageTitle,
-
-        }
-          );
-    }
-
-      else {
-        this.setState(
-          {
-          
-
-              messageType: "empty",
-              changedItemTitle: "",
-              changedItem: "",
-
-        }
-          );
-
+    this.setState(
+      {
+        messageType: messageType,
+        changedItemKey: messageId,
+        changedItemTitle: messageTitle,
       }
+    );
+
   }
 
 
 
   render() {
-    //console.log(this.state.todos);
     return (
       <div className="App">
         <ul>
           <Todos todos={this.state.todos} toggleComplete={this.toggleComplete} deleteTodo={this.deleteTodo} />
         </ul>
-        <StatusMessage messageType={this.state.messageType} changedItem={this.state.changedItem} changedItemTitle={this.state.changedItemTitle} />
+
+        <StatusMessage messageType={this.state.messageType} changedItemKey={this.state.changedItemKey} changedItemTitle={this.state.changedItemTitle} />
+
+        {
+          // TODO - pull this into a component
+          this.state.emptyMessage ? (
+            " Empty message here "
+          ) : ""
+        }
+
       </div>
     );
   }
