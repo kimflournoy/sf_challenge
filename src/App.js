@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Todos from './components/Todos/Todos';
 import StatusMessage from './components/StatusMessage/StatusMessage';
 import EmptyMessage from './components/EmptyMessage/EmptyMessage';
+import AddTodo from './components/AddTodo/AddTodo';
 
 import './App.scss';
 
@@ -87,6 +88,22 @@ class App extends Component {
 
   }
 
+  // Add todo item
+  addTodo = (title) => {
+
+    // this is a hacky way to do this, just for the demo - will cause problems with non-unique id's
+    const newId = this.state.todos.length + 1;
+
+    const newTodo = {
+      id: newId,
+      title: title,
+      completed: false
+    }
+    this.setState({ todos: [...this.state.todos, newTodo] });
+
+    this.updateMessage(newId, title, "added");
+  }
+
 
   // update the message as needed. Probably can make this more streamlined.
   updateMessage = (messageId, messageTitle, messageType) => {
@@ -106,19 +123,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
+        <h2>
+          Shopping list
+      </h2>
+
+      <AddTodo addTodo={this.addTodo} />
+
         <ul>
           <Todos todos={this.state.todos} toggleComplete={this.toggleComplete} deleteTodo={this.deleteTodo} />
         </ul>
 
+        
+
         <StatusMessage messageType={this.state.messageType} changedItemKey={this.state.changedItemKey} changedItemTitle={this.state.changedItemTitle} />
 
-      <EmptyMessage emptyMessage={this.state.emptyMessage} />
-        {/* {
-          // TODO - pull this into a component
-          this.state.emptyMessage ? (
-            " Empty message here "
-          ) : ""
-        } */}
+        <EmptyMessage emptyMessage={this.state.emptyMessage} />
+
 
       </div>
     );
