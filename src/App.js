@@ -8,6 +8,7 @@ import AddListItem from './components/AddListItem/AddListItem';
 import CartTotal from './components/CartTotal/CartTotal';
 
 import './App.scss';
+import CartImage from './images/cart.svg';
 
 
 class App extends Component {
@@ -135,12 +136,14 @@ class App extends Component {
   }
 
 
+  // ToDo: pull header and associated styles into own component
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
 
         <h2>
+          <img src={CartImage} alt="" className="app__cart-image" />
           Shopping list
         </h2>
 

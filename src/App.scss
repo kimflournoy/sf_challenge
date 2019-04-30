@@ -9,7 +9,17 @@
   padding: 0;
 }
 
-.App {
+.app {
   @include card;
 }
 
+// ToDo: pull header into its own component
+.app__cart-image {
+  display: inline-block;
+  background-color: $icon-background-color;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.25rem;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}

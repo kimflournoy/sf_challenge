@@ -32,7 +32,10 @@ export class ShoppingListItem extends Component {
     return (
       <li className={"shoppinglistitem__list-item" + this.getStyle(completed)}>
         <input type="checkbox" className="shoppinglistitem__checkbox" id={"shoppinglistitem__checkbox_checkbox-" + id} onChange={this.props.toggleComplete.bind(this, id)} />
-        <label htmlFor={"shoppinglistitem__checkbox_checkbox-" + id} className="shoppinglistitem__checkbox-label">{title} ({stockMessage})</label>
+        <label htmlFor={"shoppinglistitem__checkbox_checkbox-" + id} className="shoppinglistitem__checkbox-label">
+          <span className="shoppinglistitem__checkbox-label-title">{title}</span>
+          <span className="shoppinglistitem__checkbox-label-stock">({stockMessage})</span>
+        </label>
         <button className="shoppinglistitem__delete-button" onClick={this.props.deleteListItem.bind(this, id)}>X</button>
       </li>
     )

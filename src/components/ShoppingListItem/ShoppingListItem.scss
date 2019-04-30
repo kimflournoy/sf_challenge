@@ -1,27 +1,36 @@
 @import "../../app-styles/app-styles.scss";
 
-
 .shoppinglistitem__list-item {
-    padding: 10px;
+  padding: 0.25rem;
 }
 
-.shoppinglistitem__list-item_checked {
-    text-decoration: line-through;
+.shoppinglistitem__list-item_checked .shoppinglistitem__checkbox-label {
+  text-decoration: line-through;
 }
 
 .shoppinglistitem__checkbox {
-    margin-right: 5px;
+  margin-right: 0.25rem;
 }
 
 .shoppinglistitem__checkbox-label {
+    vertical-align: middle;
+
     @include sm-screen {
-        border: 2px dotted red;
-    }
+    width: 12rem;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.shoppinglistitem__checkbox-label-stock {
+    margin-left: 0.1rem;
 }
 
 .shoppinglistitem__delete-button {
-    margin-left: 5px;
-    padding: 5px 10px;
-    background-color: $main-background-color;
-    border-radius: 50%;
+  margin-left: 0.25rem;
+  padding: 0.3rem;
+  background-color: $main-background-color;
+  border-radius: 50%;
 }
