@@ -2,4 +2,10 @@
 
 .cart-total__checkout-button {
     @include button;
+    margin-top: 0.25rem;
+
+    @include sm-screen {
+        display: block;
+        width: 100%;
+      }
 }

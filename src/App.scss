@@ -25,11 +25,16 @@
 }
 
 .app__total {
-  margin-top: 2rem;
+
+  @include sm-screen {
+    border-top: 2px solid $main-border-color;
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+
   @include lg-screen {
     @include flexbox-child;
     padding-left: 2rem;
-    margin-top: 0;
   }
 }
 

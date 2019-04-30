@@ -8,6 +8,11 @@
   text-decoration: line-through;
 }
 
+.shoppinglistitem__item-image {
+  height: 2.5rem;
+  vertical-align: middle;
+}
+
 .shoppinglistitem__checkbox {
   margin-right: 0.25rem;
 }
@@ -24,13 +29,25 @@
   }
 }
 
+.shoppinglistitem__checkbox-label-title {
+  font-weight: bold;
+}
+
 .shoppinglistitem__checkbox-label-stock {
     margin-left: 0.1rem;
 }
 
 .shoppinglistitem__delete-button {
   margin-left: 0.25rem;
-  padding: 0.3rem 0.55rem;
-  background-color: $main-background-color;
-  border-radius: 50%;
+  border: 0;
+  vertical-align: middle;
+}
+
+.shoppinglistitem__delete-button-image {
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: $icon-background-color;
+  
 }

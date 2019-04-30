@@ -1,13 +1,13 @@
 // ToDo: change this from PX
 
 @mixin sm-screen {
-    @media (max-width: 576px) {
+    @media (max-width: 800px) {
         @content;
     }
  }
 
  @mixin lg-screen {
-    @media (min-width: 577px) {
+    @media (min-width: 801px) {
         @content;
     }
  }
