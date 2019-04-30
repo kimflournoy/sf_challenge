@@ -129,7 +129,7 @@ class App extends Component {
       <div className="App">
 
         <h2>
-          Shopping list
+          Shopping list 
       </h2>
 
       <AddListItem addListItem={this.addListItem} />
