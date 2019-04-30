@@ -1,13 +1,16 @@
 {
-  "main.css": "/sf_challenge/static/css/main.500be375.chunk.css",
-  "main.js": "/sf_challenge/static/js/main.37146310.chunk.js",
-  "main.js.map": "/sf_challenge/static/js/main.37146310.chunk.js.map",
+  "main.css": "/sf_challenge/static/css/main.88fbf088.chunk.css",
+  "main.js": "/sf_challenge/static/js/main.94c0a775.chunk.js",
+  "main.js.map": "/sf_challenge/static/js/main.94c0a775.chunk.js.map",
   "runtime~main.js": "/sf_challenge/static/js/runtime~main.9eaf4d3d.js",
   "runtime~main.js.map": "/sf_challenge/static/js/runtime~main.9eaf4d3d.js.map",
-  "static/js/2.4e65827f.chunk.js": "/sf_challenge/static/js/2.4e65827f.chunk.js",
-  "static/js/2.4e65827f.chunk.js.map": "/sf_challenge/static/js/2.4e65827f.chunk.js.map",
+  "static/js/2.77a0d472.chunk.js": "/sf_challenge/static/js/2.77a0d472.chunk.js",
+  "static/js/2.77a0d472.chunk.js.map": "/sf_challenge/static/js/2.77a0d472.chunk.js.map",
   "index.html": "/sf_challenge/index.html",
-  "precache-manifest.5cba94a3903f94213bf947ac8435731e.js": "/sf_challenge/precache-manifest.5cba94a3903f94213bf947ac8435731e.js",
+  "precache-manifest.01e465394337e40884f5a5312de6e29d.js": "/sf_challenge/precache-manifest.01e465394337e40884f5a5312de6e29d.js",
   "service-worker.js": "/sf_challenge/service-worker.js",
-  "static/css/main.500be375.chunk.css.map": "/sf_challenge/static/css/main.500be375.chunk.css.map"
+  "static/css/main.88fbf088.chunk.css.map": "/sf_challenge/static/css/main.88fbf088.chunk.css.map",
+  "static/media/cart.svg": "/sf_challenge/static/media/cart.f3a172b5.svg",
+  "static/media/delete-image.svg": "/sf_challenge/static/media/delete-image.5a727b71.svg",
+  "static/media/empty-image.png": "/sf_challenge/static/media/empty-image.56c3a0e3.png"
 }
