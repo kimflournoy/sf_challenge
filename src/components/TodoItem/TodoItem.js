@@ -23,12 +23,21 @@ export class TodoItem extends Component {
 
 
   render() {
-    const { id, title, completed } = this.props.todo;
+    const { id, title, inStock, completed } = this.props.todo;
+
+    var stockMessage = "";
+
+    if(inStock) {
+      stockMessage = "In stock";
+    }
+    else {
+      stockMessage = "Out of stock";
+    }
 
     return (
       <li className={"todoitem__list-item" + this.getStyle(completed) }>
         <input type="checkbox" className="todoitem__checkbox" id={"todoitem__checkbox_checkbox-" + id} onChange={this.props.toggleComplete.bind(this, id)} />
-        <label htmlFor={"todoitem__checkbox_checkbox-" + id} className="todoitem__checkbox-label">{ title }</label>
+        <label htmlFor={"todoitem__checkbox_checkbox-" + id} className="todoitem__checkbox-label">{ title } ({ stockMessage })</label>
         <button className="todoitem__delete-button" onClick={this.props.deleteTodo.bind(this, id)}>X</button>
       </li>
     )

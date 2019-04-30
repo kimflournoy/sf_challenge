@@ -15,16 +15,19 @@ class App extends Component {
       {
         id: 0,
         title: 'Take out the trash',
+        inStock: true,
         completed: false
       },
       {
         id: 1,
         title: 'Clean the dishes',
+        inStock: true,
         completed: false
       },
       {
         id: 2,
         title: 'Make coffee',
+        inStock: true,
         completed: false
       },
     ],
@@ -97,6 +100,7 @@ class App extends Component {
     const newTodo = {
       id: newId,
       title: title,
+      inStock: true,
       completed: false
     }
     this.setState({ todos: [...this.state.todos, newTodo] });
