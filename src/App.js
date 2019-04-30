@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 import Todos from './components/Todos/Todos';
 import StatusMessage from './components/StatusMessage/StatusMessage';
@@ -13,19 +14,19 @@ class App extends Component {
   state = {
     todos: [
       {
-        id: 0,
+        id: uuid.v4(),
         title: 'Take out the trash',
         inStock: true,
         completed: false
       },
       {
-        id: 1,
+        id: uuid.v4(),
         title: 'Clean the dishes',
         inStock: true,
         completed: false
       },
       {
-        id: 2,
+        id: uuid.v4(),
         title: 'Make coffee',
         inStock: true,
         completed: false
@@ -94,8 +95,7 @@ class App extends Component {
   // Add todo item
   addTodo = (title) => {
 
-    // this is a hacky way to do this, just for the demo - will cause problems with non-unique id's
-    const newId = this.state.todos.length + 1;
+    const newId = uuid.v4();
 
     const newTodo = {
       id: newId,
