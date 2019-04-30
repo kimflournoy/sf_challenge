@@ -10,7 +10,7 @@ export class EmptyMessage extends Component {
     if (this.props.emptyMessage) {
       return (
         <div className="empty-message__message-wrapper">
-          Empty message here 3
+          Empty message here
           </div>
       )
     }
