@@ -22,10 +22,6 @@ body {
     color: $main-text-color;
   }
 
-button, input, select {
-    @include font-family;
-}
-
 a {
     color: $link-color;
     &:visited {
@@ -34,4 +30,9 @@ a {
     &:hover, &:active {
         color: $link-color-hover;
     }
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin: 1rem 0;
 }

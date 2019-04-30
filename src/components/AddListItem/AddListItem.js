@@ -34,7 +34,7 @@ export class AddListItem extends Component {
           <form onSubmit={this.submitForm}>
             <label htmlFor="add-list-item__input">Add item</label>
             <input type="text" id="add-list-item__input" name="add-list-item__input" className="add-list-item__input" placeholder="Add item here" onChange={this.changeForm} value={this.state.title} />
-            <button type="submit" value="add-list-item__submit" disabled={this.state.disableSubmit}>Submit</button>
+            <button type="submit" className="add-list-item__submit" disabled={this.state.disableSubmit}>Submit</button>
           </form>
           </div>
       )

@@ -5,6 +5,7 @@ import ShoppingList from './components/ShoppingList/ShoppingList';
 import StatusMessage from './components/StatusMessage/StatusMessage';
 import EmptyMessage from './components/EmptyMessage/EmptyMessage';
 import AddListItem from './components/AddListItem/AddListItem';
+import CartTotal from './components/CartTotal/CartTotal';
 
 import './App.scss';
 
@@ -147,6 +148,8 @@ class App extends Component {
         <StatusMessage messageType={this.state.messageType} changedItemKey={this.state.changedItemKey} changedItemTitle={this.state.changedItemTitle} />
 
         <EmptyMessage emptyMessage={this.state.emptyMessage} />
+
+        <CartTotal emptyMessage={this.state.emptyMessage} />
 
       </div>
     );

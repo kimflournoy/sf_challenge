@@ -1,0 +1,5 @@
+@import "../../app-styles/app-styles.scss";
+
+.cart-total__checkout-button {
+    @include button;
+}

@@ -1,0 +1,28 @@
+@import "./colors.scss";
+@import "./typography.scss";
+
+@mixin button {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  
+  background-color: $button-background-color;
+  color: $button-text-color;
+  &:hover, &:active {
+    background-color: $button-background-color-hover;
+  }
+  &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+  }
+}
+
+
+@mixin text-input {
+    padding: 0.25rem;
+    
+}
+
+
+button, input, select {
+    @include font-family;
+  }
