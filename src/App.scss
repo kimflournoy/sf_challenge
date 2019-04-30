@@ -1,5 +1,6 @@
 @import "./app-styles/app-styles.scss";
 
+@import "./app-styles/app-styles.scss";
 
 
 * {
@@ -8,5 +9,7 @@
   padding: 0;
 }
 
-
+.App {
+  @include card;
+}
 

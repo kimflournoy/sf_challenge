@@ -16,19 +16,25 @@ class App extends Component {
     listitems: [
       {
         id: uuid.v4(),
-        title: 'Take out the trash',
+        title: 'Astro Camping Hat',
         inStock: true,
         completed: false
       },
       {
         id: uuid.v4(),
-        title: 'Clean the dishes',
+        title: 'Astro Hat - Sizzling Summer Edition',
+        inStock: false,
+        completed: false
+      },
+      {
+        id: uuid.v4(),
+        title: 'Astro Beanie - White Winter Edition',
         inStock: true,
         completed: false
       },
       {
         id: uuid.v4(),
-        title: 'Make coffee',
+        title: 'Astro Beanie - Splashing Spring Edition',
         inStock: true,
         completed: false
       },

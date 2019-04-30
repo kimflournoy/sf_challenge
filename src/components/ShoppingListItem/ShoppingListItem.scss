@@ -13,6 +13,12 @@
     margin-right: 5px;
 }
 
+.shoppinglistitem__checkbox-label {
+    @include sm-screen {
+        border: 2px dotted red;
+    }
+}
+
 .shoppinglistitem__delete-button {
     margin-left: 5px;
     padding: 5px 10px;
