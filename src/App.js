@@ -129,21 +129,19 @@ class App extends Component {
       <div className="App">
 
         <h2>
-          Shopping list 
-      </h2>
+          Shopping list
+        </h2>
 
-      <AddListItem addListItem={this.addListItem} />
+        <AddListItem addListItem={this.addListItem} />
 
+        {/* ToDo: move <ul> tags inside of ShoppingList component */}
         <ul>
           <ShoppingList listitems={this.state.listitems} toggleComplete={this.toggleComplete} deleteListItem={this.deleteListItem} />
         </ul>
 
-        
-
         <StatusMessage messageType={this.state.messageType} changedItemKey={this.state.changedItemKey} changedItemTitle={this.state.changedItemTitle} />
 
         <EmptyMessage emptyMessage={this.state.emptyMessage} />
-
 
       </div>
     );
