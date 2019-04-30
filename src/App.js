@@ -103,7 +103,12 @@ class App extends Component {
       inStock: true,
       completed: false
     }
-    this.setState({ listitems: [...this.state.listitems, newListItem] });
+
+    this.setState(
+      {
+        listitems: [...this.state.listitems, newListItem],
+        emptyMessage: false
+      });
 
     this.updateMessage(newId, title, "added");
   }

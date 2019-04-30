@@ -1,13 +1,37 @@
 @import "./colors.scss";
 
+
+// MIXINS
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+@mixin font-family {
+    font-family: "Salesforce Sans", serif, Arial, Helvetica, sans-serif;
+}
+
+
+// STYLES
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    @include font-family;
     line-height: 1.4rem;
     color: $main-text-color;
   }
 
-  @mixin list-reset {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-  }
+button, input, select {
+    @include font-family;
+}
+
+a {
+    color: $link-color;
+    &:visited {
+        color: $link-color-visited;
+    }
+    &:hover, &:active {
+        color: $link-color-hover;
+    }
+}
