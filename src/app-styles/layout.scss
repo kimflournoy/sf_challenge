@@ -4,9 +4,12 @@
 @import "./accessibility.scss";
 
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4em;
-    color: $main-border-color;
-  }
 
+@mixin card {
+  border: 1px solid $main-border-color;
+  padding: 1rem;
+  margin: 0.25rem;
+  background-color: $page-background-color;
+  border-radius: 0.25rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem $drop-shadow-color;
+}

@@ -1,1 +1,6 @@
 @import "../../app-styles/app-styles.scss";
+
+.shopping-list__list {
+    @include list-reset;
+    @include card;
+}

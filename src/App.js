@@ -135,7 +135,7 @@ class App extends Component {
         <AddListItem addListItem={this.addListItem} />
 
         {/* ToDo: move <ul> tags inside of ShoppingList component */}
-        <ul>
+        <ul className="shopping-list__list">
           <ShoppingList listitems={this.state.listitems} toggleComplete={this.toggleComplete} deleteListItem={this.deleteListItem} />
         </ul>
 
