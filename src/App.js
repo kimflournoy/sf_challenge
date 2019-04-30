@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 
-import Todos from './components/Todos/Todos';
+import ShoppingList from './components/ShoppingList/ShoppingList';
 import StatusMessage from './components/StatusMessage/StatusMessage';
 import EmptyMessage from './components/EmptyMessage/EmptyMessage';
-import AddTodo from './components/AddTodo/AddTodo';
+import AddListItem from './components/AddListItem/AddListItem';
 
 import './App.scss';
 
@@ -12,7 +12,7 @@ import './App.scss';
 class App extends Component {
 
   state = {
-    todos: [
+    listitems: [
       {
         id: uuid.v4(),
         title: 'Take out the trash',
@@ -40,33 +40,33 @@ class App extends Component {
   }
 
 
-  // Toggle todo item
+  // Toggle list item
   toggleComplete = (id) => {
     this.setState(
       {
-        todos: this.state.todos.map(todo => {
-          if (todo.id === id) {
-            todo.completed = !todo.completed;
+        listitems: this.state.listitems.map(listitem => {
+          if (listitem.id === id) {
+            listitem.completed = !listitem.completed;
 
             // Update message after toggling checkbox
-            if (todo.completed === true) {
-              this.updateMessage(todo.id, todo.title, "checked");
+            if (listitem.completed === true) {
+              this.updateMessage(listitem.id, listitem.title, "checked");
             }
             else {
-              this.updateMessage(todo.id, todo.title, "unchecked");
+              this.updateMessage(listitem.id, listitem.title, "unchecked");
             }
 
           }
-          return todo;
+          return listitem;
         }
         )
       });
   }
 
 
-  // Check if there are no more todos
+  // Check if there are no more items
   checkEmpty = () => {
-    if (this.state.todos.length === 0) {
+    if (this.state.listitems.length === 0) {
       this.setState(
         {
           emptyMessage: true,
@@ -76,9 +76,9 @@ class App extends Component {
   }
 
 
-  // Delete todo item
-  deleteTodo = (id) => {
-    var result = this.state.todos.find(e => e.id === id);
+  // Delete list item
+  deleteListItem = (id) => {
+    var result = this.state.listitems.find(e => e.id === id);
 
     // update the message first before we remove the item from the array
     this.updateMessage(result.id, result.title, "deleted");
@@ -86,24 +86,24 @@ class App extends Component {
     // using a callback since setState is asynch
     this.setState(
       {
-        todos: [...this.state.todos.filter(todo => todo.id !== id)],
+        listitems: [...this.state.listitems.filter(listitem => listitem.id !== id)],
       }, () => this.checkEmpty()
     );
 
   }
 
-  // Add todo item
-  addTodo = (title) => {
+  // Add list item
+  addListItem = (title) => {
 
     const newId = uuid.v4();
 
-    const newTodo = {
+    const newListItem = {
       id: newId,
       title: title,
       inStock: true,
       completed: false
     }
-    this.setState({ todos: [...this.state.todos, newTodo] });
+    this.setState({ listitems: [...this.state.listitems, newListItem] });
 
     this.updateMessage(newId, title, "added");
   }
@@ -132,10 +132,10 @@ class App extends Component {
           Shopping list
       </h2>
 
-      <AddTodo addTodo={this.addTodo} />
+      <AddListItem addListItem={this.addListItem} />
 
         <ul>
-          <Todos todos={this.state.todos} toggleComplete={this.toggleComplete} deleteTodo={this.deleteTodo} />
+          <ShoppingList listitems={this.state.listitems} toggleComplete={this.toggleComplete} deleteListItem={this.deleteListItem} />
         </ul>
 
         
