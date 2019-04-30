@@ -13,7 +13,7 @@ export class StatusMessage extends Component {
     }
 
     return (
-      <div className="status-message__message-wrapper">
+      <div className="status-message__message-wrapper" role="region" aria-live="polite">
         {this.props.changedItemTitle}
         {isMessage ? (
           " was "
