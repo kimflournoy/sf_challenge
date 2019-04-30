@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ShoppingListItem from "../ShoppingListItem/ShoppingListItem";
 import PropTypes from 'prop-types';
 
+import './ShoppingList.scss';
+
 class ShoppingList extends Component {
 
   render() {

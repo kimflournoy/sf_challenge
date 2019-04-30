@@ -1,5 +1,5 @@
+@import "../../mixins/mixins.scss";
+
 .status-message__message-wrapper {
-    padding: 5px;
-    border: 1px solid #ccc;
-    margin: 10px;
+    @include sr-only;
 }
