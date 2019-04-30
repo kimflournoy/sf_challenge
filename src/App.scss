@@ -11,6 +11,26 @@
 
 .app {
   @include card;
+
+  @include lg-screen {
+    @include flexbox-parent;
+  }
+
+}
+
+.app__cart {
+  @include lg-screen {
+    @include flexbox-child;
+  }
+}
+
+.app__total {
+  margin-top: 2rem;
+  @include lg-screen {
+    @include flexbox-child;
+    padding-left: 2rem;
+    margin-top: 0;
+  }
 }
 
 // ToDo: pull header into its own component

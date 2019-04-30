@@ -142,23 +142,28 @@ class App extends Component {
     return (
       <div className="app">
 
-        <h2>
-          <img src={CartImage} alt="" className="app__cart-image" />
-          Shopping list
+        <div className="app__cart">
+          <h2>
+            <img src={CartImage} alt="" className="app__cart-image" />
+            Shopping list
         </h2>
 
-        <AddListItem addListItem={this.addListItem} />
+          <AddListItem addListItem={this.addListItem} />
 
-        {/* ToDo: move <ul> tags inside of ShoppingList component */}
-        <ul className="shopping-list__list">
-          <ShoppingList listitems={this.state.listitems} toggleComplete={this.toggleComplete} deleteListItem={this.deleteListItem} />
-        </ul>
+          {/* ToDo: move <ul> tags inside of ShoppingList component */}
+          <ul className="shopping-list__list">
+            <ShoppingList listitems={this.state.listitems} toggleComplete={this.toggleComplete} deleteListItem={this.deleteListItem} />
+          </ul>
 
-        <StatusMessage messageType={this.state.messageType} changedItemKey={this.state.changedItemKey} changedItemTitle={this.state.changedItemTitle} />
+          <StatusMessage messageType={this.state.messageType} changedItemKey={this.state.changedItemKey} changedItemTitle={this.state.changedItemTitle} />
 
-        <EmptyMessage emptyMessage={this.state.emptyMessage} />
+          <EmptyMessage emptyMessage={this.state.emptyMessage} />
 
-        <CartTotal emptyMessage={this.state.emptyMessage} />
+        </div>
+
+        <div className="app__total">
+          <CartTotal emptyMessage={this.state.emptyMessage} />
+        </div>
 
       </div>
     );
